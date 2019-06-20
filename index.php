@@ -12,6 +12,9 @@
             margin: auto;
             margin-top: 50px;
         }
+        .processed-data {
+            display: none;
+        }
     </style>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -23,14 +26,16 @@
     <div class="change-my-face-content">
         <div>
         <h2>See how your lifestyle affects <br>your looks in years to come</h2>
+            <div class="change-my-face-img">
             <img src="profile.jpg" alt="Upload Image">
             <form action="abc.php" method="post" enctype="multipart/form-data" id="form">
-                Upload a photograph of yourself facing the camera.
+                Upload a photograph of yourself facing the camera.<br><br>
                 <input type="file" name="image" id="image">
-                <input type="text" name="action" id="action" value="upload_image">
-                <input type="text" name="api_key" id="api_key" value="t76zM9aQzI2TcvoXas4rGiggwpYpmOSq">
+                <input type="text" name="action" id="action" value="upload_image" hidden>
+                <input type="text" name="api_key" id="api_key" value="t76zM9aQzI2TcvoXas4rGiggwpYpmOSq" hidden>
                 <input type="submit" value="Upload Image" name="submit">
             </form>
+            </div>
         </div>
         <div class="processed-data">
             <img src="profile.jpg" alt="Upload Image">
@@ -73,7 +78,9 @@ console.log(data);
 
     request.done(function( response ) {
         console.log(response.data.effect_results[0].output_file);
+        $('.change-my-face-img').hide();
         $('.processed-data img').attr('src',response.data.effect_results[0].output_file);
+        $('.processed-data').show();
 
     });
 
