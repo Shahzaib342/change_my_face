@@ -1,0 +1,59 @@
+/**
+ * Created By Shahzaib 18/06/2019
+ **/
+
+.change-my-face-content {
+    width: 800px;
+    margin: auto;
+}
+
+.change-my-face-content div:not(.loader) {
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.effects-variation div {
+    margin-top: 30px;
+}
+
+.processed-data {
+    display: none;
+}
+
+.btn {
+    font: bold 12px Arial;
+    margin: 10px;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 11px 21px 13px 12px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    cursor: pointer;
+}
+
+.btn.active{
+    background: burlywood;
+}
+
+.processed-data img {
+    margin-left: 96px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
