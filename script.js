@@ -28,7 +28,6 @@ $(document).ready(function (e) {
                         api_key: 't76zM9aQzI2TcvoXas4rGiggwpYpmOSq',
                         session_id: data.session_id,
                         'effects[effect_id]': 65,
-                        'effects[dont_cache]':true
 
                     },
                 });
@@ -66,6 +65,7 @@ function changeEffect(effect_id, id) {
             session_id: face.session_id,
             'effects[effect_id]': effect_id,
             'effects[age]':35,
+            'effects[dont_cache]':true
 
         },
     });
