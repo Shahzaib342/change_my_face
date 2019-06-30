@@ -27,7 +27,8 @@ $(document).ready(function (e) {
                         action: 'apply_effects',
                         api_key: 't76zM9aQzI2TcvoXas4rGiggwpYpmOSq',
                         session_id: data.session_id,
-                        'effects[effect_id]': 65
+                        'effects[effect_id]': 65,
+                        'effects[dont_cache]':true
 
                     },
                 });
@@ -63,7 +64,8 @@ function changeEffect(effect_id, id) {
             action: 'apply_effects',
             api_key: 't76zM9aQzI2TcvoXas4rGiggwpYpmOSq',
             session_id: face.session_id,
-            'effects[effect_id]': effect_id
+            'effects[effect_id]': effect_id,
+            'effects[age]':35,
 
         },
     });
@@ -73,7 +75,7 @@ function changeEffect(effect_id, id) {
         $('.btn.active').removeClass('active');
         $('#' + id).addClass('active');
         $('.change-my-face-img').hide();
-        $('.processed-data img').attr('src', response.data.effect_results[4].output_file);
+        $('.processed-data img').attr('src', response.data.effect_results[0].output_file);
         $('.processed-data').show();
 
     });
